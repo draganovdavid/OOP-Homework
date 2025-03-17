@@ -1,41 +1,36 @@
 ﻿namespace Calculator
 {
-    class Currency
+    public interface ICurrencyConverter
     {
-        public string Name { get; set; } = null!;
+        decimal ConvertToBGN(decimal amount, string currency);
+        decimal ConvertFromBGN(decimal amount, string currency);
+    }
 
-        public decimal ConvertToBGN(decimal amount)
+    public class CurrencyConverter : ICurrencyConverter
+    {
+        private readonly Dictionary<string, decimal> exchangeRates = new()
         {
-            if (Name == "EUR")
+            {"EUR", 1.955320m},
+            {"USD", 1.797500m},
+            {"GBP", 2.325070m}
+        };
+
+        public decimal ConvertToBGN(decimal amount, string currency)
+        {
+            if (exchangeRates.ContainsKey(currency))
             {
-                amount *= 1.955320m;
+                amount *= exchangeRates[currency];
             }
-            else if (Name == "USD")
-            {
-                amount *= 1.797500m;
-            }
-            else if (Name == "GBP")
-            {
-                amount *= 2.325070m;
-            }
-            return amount -= amount * 0.02m;
+            return amount * 0.98m;
         }
 
-        public decimal ConvertFromBGN(decimal amount)
+        public decimal ConvertFromBGN(decimal amount, string currency)
         {
-            if (Name == "EUR")
+            if (exchangeRates.ContainsKey(currency))
             {
-                amount /= 1.955320m;
+                amount /= exchangeRates[currency];
             }
-            else if (Name == "USD")
-            {
-                amount /= 1.797500m;
-            }
-            else if (Name == "GBP")
-            {
-                amount /= 2.325070m;
-            }
-            return amount -= amount * 0.02m;
+            return amount * 0.98m;
         }
     }
 }

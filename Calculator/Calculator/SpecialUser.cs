@@ -1,4 +1,6 @@
-﻿namespace Calculator
+﻿using System.Xml.Linq;
+
+namespace Calculator
 {
     class SpecialUser : User
     {

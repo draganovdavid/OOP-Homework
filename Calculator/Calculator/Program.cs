@@ -1,7 +1,9 @@
 ﻿namespace MyApp
 {
     using Calculator;
-    public class Program
+    using System;
+
+    public class Program : CurrencyConverter
     {
         static void Main(string[] args)
         {
@@ -19,15 +21,32 @@
             string firstCurrency = input[0];
             string secondCurrency = input[1];
 
+            ICurrencyConverter converter = new CurrencyConverter();
+
             if (firstCurrency == "BGN")
             {
-                Currency currency = new Currency { Name = secondCurrency };
-                Console.WriteLine(currency.ConvertFromBGN(amount).ToString("F2"));
+                decimal convertedAmount = converter.ConvertFromBGN(amount, secondCurrency);
+                string convertedResult = convertedAmount.ToString("F2");
+                switch (secondCurrency)
+                {
+                    case "EUR":
+                        Console.WriteLine($"{convertedResult}(€)");
+                        break;
+                    case "USD":
+                        Console.WriteLine($"{convertedResult}($)");
+                        break;
+                    case "GBP":
+                        Console.WriteLine($"{convertedResult}(£)");
+                        break;
+                    default:
+                        break;
+                }
             }
             else if (secondCurrency == "BGN")
             {
-                Currency currency = new Currency { Name = firstCurrency };
-                Console.WriteLine(currency.ConvertToBGN(amount).ToString("F2"));
+                decimal convertedAmount = converter.ConvertToBGN(amount, firstCurrency);
+                string convertedResult = convertedAmount.ToString("F2");
+                Console.WriteLine($"{convertedResult}(lv.)");
             }
             else
             {
@@ -35,10 +54,10 @@
                 return;
             }
 
-            Console.WriteLine();
+            Console.WriteLine("----------------------------");
 
             User user = new User { Name = "David", Balance = 2790.43 };
-            SpecialUser specialUser = new SpecialUser { Name = "David", Balance = 2790.43 };
+            SpecialUser specialUser = new SpecialUser { Name = "David Draganov", Balance = 3563.63 };
 
             Console.WriteLine(user.UserInfo());
             Console.WriteLine(specialUser.UserInfo());
