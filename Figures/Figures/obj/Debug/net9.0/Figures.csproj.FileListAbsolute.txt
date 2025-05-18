@@ -1,0 +1,14 @@
+C:\Users\PC\source\repos\Figures\Figures\bin\Debug\net9.0\Figures.exe
+C:\Users\PC\source\repos\Figures\Figures\bin\Debug\net9.0\Figures.deps.json
+C:\Users\PC\source\repos\Figures\Figures\bin\Debug\net9.0\Figures.runtimeconfig.json
+C:\Users\PC\source\repos\Figures\Figures\bin\Debug\net9.0\Figures.dll
+C:\Users\PC\source\repos\Figures\Figures\bin\Debug\net9.0\Figures.pdb
+C:\Users\PC\source\repos\Figures\Figures\obj\Debug\net9.0\Figures.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\source\repos\Figures\Figures\obj\Debug\net9.0\Figures.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\Figures\Figures\obj\Debug\net9.0\Figures.AssemblyInfo.cs
+C:\Users\PC\source\repos\Figures\Figures\obj\Debug\net9.0\Figures.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\Figures\Figures\obj\Debug\net9.0\Figures.dll
+C:\Users\PC\source\repos\Figures\Figures\obj\Debug\net9.0\refint\Figures.dll
+C:\Users\PC\source\repos\Figures\Figures\obj\Debug\net9.0\Figures.pdb
+C:\Users\PC\source\repos\Figures\Figures\obj\Debug\net9.0\Figures.genruntimeconfig.cache
+C:\Users\PC\source\repos\Figures\Figures\obj\Debug\net9.0\ref\Figures.dll
